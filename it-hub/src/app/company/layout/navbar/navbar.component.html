@@ -1,0 +1,26 @@
+<p>
+  <mat-toolbar color="accent">
+    <span>{{companyName}}</span>
+    <span class="spacer"></span>
+    <button mat-button [routerLink]="['/company']" routerLinkActive="router-link-active">Home</button>
+    <button mat-button [routerLink]="['/company/addProject']" routerLinkActive="router-link-active">Add Project</button>
+    <button mat-icon-button [matMenuTriggerFor]="employeeMenu">
+      <mat-icon>groups</mat-icon>
+    </button>
+    <mat-menu #employeeMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/company/addEmployee']" routerLinkActive="router-link-active">Add</button>
+      <button mat-menu-item [routerLink]="['/company/viewEmployees']" routerLinkActive="router-link-active">View</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/company/companyProfile']" routerLinkActive="router-link-active">Profile</button>
+      <button mat-menu-item aria-label="icon-button with exit_to_app icon" (click)="logOut()">
+        <span>logout</span>
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</p>
+<router-outlet></router-outlet>

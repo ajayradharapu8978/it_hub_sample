@@ -1,0 +1,33 @@
+.example-form {
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }  
+
+  mat-progress-bar {
+  margin: auto;
+}
+.card-margin{
+  margin: 0px 10% 0px 10%;
+}
+  
+input[type="file"]{
+visibility: hidden;
+}
+
+.image-preview{
+  height: 5rem;
+  width: 1rem 0;
+}
+.image-preview img{
+  height: 100%;
+}

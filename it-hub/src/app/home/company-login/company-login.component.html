@@ -1,0 +1,22 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="25">
+        <mat-toolbar>Company Login</mat-toolbar>
+        <form fxLayoutAlign="strech" fxLayout="column" [formGroup]="loginForm" class="login-form">
+            <img src="../../../assets/undraw_Business_decisions_re_84ag.png" alt="company_login" width="100%"><br>
+            <mat-form-field class="example-full-width" color="accent">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" color="accent">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <button mat-button type="submit" color="accent" [disabled]="!loginForm.valid"
+            (click)="onClick()">Login</button>
+        </form>
+    </mat-card>
+</div>

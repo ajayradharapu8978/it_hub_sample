@@ -1,0 +1,48 @@
+<mat-dialog-content><br>
+<form action="" [formGroup]="companyregisterForm">
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" color="accent">
+          <mat-label>Company Name</mat-label>
+          <input matInput 
+          formControlName="company">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" color="accent">
+          <mat-label>Category Name</mat-label>
+          <input matInput 
+          formControlName="Category">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" color="accent">
+          <mat-label>Email</mat-label>
+          <input matInput 
+          formControlName="email">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" color="accent">
+          <mat-label>Password</mat-label>
+          <input matInput
+          formControlName="password">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <div mat-dialog-actions>
+      <button mat-stroked-button [mat-dialog-close]="companyregisterForm" type="reset">Cancel</button>
+      <button mat-stroked-button (click)="EditDetails()">Edit Data</button>
+      <button mat-stroked-button [mat-dialog-close]="companyregisterForm"
+      *ngIf="Savebutton" color="accent" (click)="onSubmit()">Save</button>
+      <button mat-stroked-button [mat-dialog-close]="companyregisterForm"
+      *ngIf="Updatebutton" color="accent" (click)="onUpdate()">Update</button>
+    </div>
+    </tr>
+  </table>
+</form><br><br>
+</mat-dialog-content>

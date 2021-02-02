@@ -1,0 +1,45 @@
+<div class="card-margin"><br>
+    <mat-card class="card">
+        <form action="" [formGroup]="companyForm">
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" color="accent">
+                            <mat-label>Company Name</mat-label>
+                            <input matInput formControlName="company">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" color="accent">
+                            <mat-label>Category Name</mat-label>
+                            <input matInput formControlName="Category">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" color="accent">
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="email">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" color="accent">
+                            <mat-label>Password</mat-label>
+                            <input matInput formControlName="password">
+                        </mat-form-field>
+                    </td>   
+                </tr>
+                <tr>
+                    <div mat-dialog-actions>
+                        <button mat-button style="width: 100%;" color="accent" (click)="onUpdate()">Save</button>
+                    </div>
+                </tr>
+            </table>
+        </form>
+    </mat-card>
+</div>

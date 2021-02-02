@@ -1,0 +1,101 @@
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading" color="accent"></mat-progress-bar><br>
+<div class="card-margin">
+<mat-card>
+  <form action="" [formGroup]="employeeregisterForm">
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Employee ID</mat-label>
+            <input matInput formControlName="EmployeeID" >
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Employee Name</mat-label>
+            <input matInput formControlName="Name" >
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Job Status</mat-label>
+            <input matInput formControlName="jobStatus">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput 
+            [matDatepicker]="picker" 
+            formControlName="DOB"
+            placeholder="MM/DD/YYYY">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Phone</mat-label>
+            <input matInput formControlName="Phone">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="pat@example.com" formControlName="email">
+            <mat-error>please enter valid email</mat-error>
+          </mat-form-field>
+        </td>
+      </tr> 
+      <tr>
+        <td>
+            <!-- <mat-label>Gender</mat-label>&nbsp;&nbsp;
+            <mat-radio-group formControlName="gender">
+              <mat-radio-button *ngFor="let gender of genderLists" [value]="gender.value">{{gender.name}}</mat-radio-button>
+            </mat-radio-group> -->
+            
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option *ngFor="let gender of genderLists" [value]="gender.value">
+                {{gender.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address"></textarea>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>        
+        <td colspan="2">
+          <button type="button" mat-stroked-button (click)="filePicker.click()">Pick Image</button>
+          <input type="file" #filePicker name="file" (change)="onImagePick($event)">
+          <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview">
+            <img [src]="imagePreview" [alt]="employeeregisterForm.value.image">
+          </div>
+         </td>
+      </tr><br>
+      <tr>
+        <button mat-stroked-button type="reset" (click)="onReset()">Cancel</button>
+        <button mat-stroked-button color="accent" (click)="onSubmit()">Save</button>
+      </tr>
+    </table>
+  </form>
+</mat-card>
+</div>

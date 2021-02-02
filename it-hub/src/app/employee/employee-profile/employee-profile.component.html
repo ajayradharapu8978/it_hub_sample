@@ -1,0 +1,37 @@
+<br>
+<div class="card-margin">
+    <mat-toolbar style="background-color: white;">
+        <strong>Profile</strong>
+    </mat-toolbar><br>
+    <mat-card>
+        <form action="" [formGroup]="EmployeeForm">
+            <mat-tab-group animationDuration="0ms" color="accent">
+                <mat-tab label="General">
+                    <mat-list>
+                        <mat-list-item><input matInput formControlName="Name"></mat-list-item>
+                    </mat-list>
+                </mat-tab>
+                <mat-tab label="Email">
+                    <mat-list>
+                        <mat-list-item><input matInput formControlName="email"></mat-list-item>
+                    </mat-list>
+                </mat-tab>
+                <mat-tab label="Phone">
+                    <mat-list>
+                        <mat-list-item><input matInput formControlName="Phone"></mat-list-item>
+                    </mat-list>
+                </mat-tab>
+                <mat-tab label="Address">
+                    <mat-list>
+                        <mat-form-field class="example-full-width" color="accent">
+                            <mat-label>My Address</mat-label>
+                            <textarea matInput formControlName="address"></textarea>
+                        </mat-form-field>
+                    </mat-list>
+                </mat-tab>
+            </mat-tab-group>
+        </form>
+    </mat-card><br>
+    <button mat-button>Cancel</button>
+    <button mat-button color="accent" (click)="onUpdate()">Save</button>
+</div>

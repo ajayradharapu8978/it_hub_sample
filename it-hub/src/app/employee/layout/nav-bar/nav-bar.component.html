@@ -1,0 +1,19 @@
+<p>
+    <mat-toolbar color="accent">
+      <span>IT HUB</span>
+      <span class="spacer"></span>
+      <button mat-button [routerLink]="['/employee/employeeHome']" routerLinkActive="router-link-active">Home</button>
+      <button mat-button [routerLink]="['/employee/viewEmployeeStatus']" routerLinkActive="router-link-active">Status</button>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/employee/employeeProfile']" routerLinkActive="router-link-active">Profile</button>
+        <button mat-menu-item aria-label="icon-button with exit_to_app icon" (click)="logOut()">
+          <span>logout</span>
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+  </p>
+  <router-outlet></router-outlet>
