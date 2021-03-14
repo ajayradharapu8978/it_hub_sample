@@ -1,7 +1,0 @@
-{
-  "name": "ionic-IT-HUB",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
